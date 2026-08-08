@@ -77,12 +77,4 @@ header{
     gap: 4px;
     margin-top: 4px;
 }
-.red-circle{
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    background-color:aquamarine;
-    margin-top: 3px;
-    margin-left: -79px;
 
-}
