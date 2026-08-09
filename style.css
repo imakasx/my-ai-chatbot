@@ -85,3 +85,41 @@ header{
     margin-top: 3px;
     margin-left: -79px;
 }
+
+.main-screen{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.message.user {
+  background: #4a90e2;
+  color: #fff;
+  align-self: flex-end;
+  margin-right: 6px;
+
+}
+
+.message.ai {
+  background: #e5e5ea;
+  color: #000;
+  align-self: flex-start;
+}
+.message {
+  margin: 8px 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  max-width: 70%;
+}
+.ai-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: flex-start;
+}
+.ai-message img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
