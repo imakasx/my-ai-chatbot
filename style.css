@@ -29,13 +29,11 @@ body{
 }
 
 .containers{
-
     border: 5px solid white;
     margin-top: 20px;
     height: 690px;
     width: 570px;
     border-radius: 20px;
-
 }
 header{
     display:flex;
@@ -89,7 +87,8 @@ header{
 .main-screen{
     display: flex;
     flex-direction: column;
-    
+    height: 500px;
+    overflow-y: auto;
 }
 
 .message.user {
@@ -116,10 +115,70 @@ header{
     align-items: flex-start;
     gap: 8px;
     align-self: flex-start;
+    margin-left: 6px;
 }
 .ai-message img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
     object-fit: cover;
+}
+.main-screen::-webkit-scrollbar {
+    width: 6px;
+}
+
+.main-screen::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+.main-screen::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.main-screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+/* Footer */
+.chat-footer {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    border-radius:  0 0 18px 18px;
+}
+
+/* Input */
+.chat-footer input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+}
+
+.chat-footer input:hover     {
+    border-color: #4a90e2;
+}
+
+/* Send button */
+.chat-footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #4a90e2;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.chat-footer button:hover {
+    background: #357abd;
 }
