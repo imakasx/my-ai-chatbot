@@ -2,7 +2,7 @@ const input = document.getElementById("messageInput");
 const sBtn = document.getElementById("sendBtn");
 const chatContainer = document.querySelector(".main-screen");
 
-const API_KEY = "api-key"; // Replace with your actual API key
+const API_KEY = "YOUR_API_KEY"; // Replace with your actual API key
 
 async function askAI(message) {
 
@@ -44,6 +44,7 @@ sBtn.addEventListener("click" , ()=>{
     const msg = input.value;
     input.value = "";
     usermsg(msg);
+    thinkinganimation();
     askAI(msg).then(answer => {
         aireply(answer);
     })
@@ -57,8 +58,29 @@ function usermsg(msg){
     chatContainer.innerHTML += `<div class="message user">${msg}</div>`
 }
 function aireply(msg){
+    const thinkingElement = document.getElementById("thinking-message");
+    if(thinkingElement){
+        thinkingElement.querySelector(".message").innerHTML = msg;
+        thinkingElement.removeAttribute("id");
+    }else{
+    
     chatContainer.innerHTML += `<div class="ai-message">
                 <img src="img/ai.jpg" alt="">
                 <div class="message ai">${msg}</div>
-            </div>`
+            </div>`}
+}
+
+
+function thinkinganimation() {
+    chatContainer.innerHTML += `<div class="ai-message" id="thinking-message">
+                <img src="img/ai.jpg" alt="">
+                <div class="message ai">
+                    <div class="thinking">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div> `
+
 }
